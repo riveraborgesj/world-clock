@@ -5,3 +5,8 @@ body {
 footer {
   text-align: center;
 }
+.container {
+  background-color: white;
+  margin: 50px 200px;
+  padding: 20px 70px;
+}
