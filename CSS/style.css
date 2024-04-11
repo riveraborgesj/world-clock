@@ -1,12 +1,71 @@
 body {
-  background-color: aliceblue;
+  background-color: #e6d3b47a;
   text-align: center;
 }
 footer {
-  text-align: center;
+  text-align: 0px center;
 }
+select {
+  margin-bottom: 20px;
+  font-size: 20px;
+  width: 100%;
+  border-radius: 4px;
+  padding: 20px;
+}
+h1 {
+  text-align: center;
+  font-size: 42px;
+}
+
 .container {
+  width: 600px;
+  text-align: 0px center;
+  font-family: fantasy;
   background-color: white;
-  margin: 50px 200px;
-  padding: 20px 70px;
+  margin: 50px auto;
+  padding: 40px 70px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
+}
+.city {
+  padding: 30px 20px;
+  margin: 8px 0;
+  text-align: left;
+  color: white;
+  text-shadow: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+}
+.city h2 {
+  font-size: 32px;
+  margin: 0px 0px;
+}
+.new-york {
+  border-radius: 10px;
+  background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/122/821/original/NYC.jpeg?1712861909);
+  background-size: cover;
+  background-position: 35px center;
+  height: fit-content;
+}
+.houston {
+  border-radius: 10px;
+  background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/122/824/original/houston.jpeg?1712862906);
+  background-size: cover;
+  background-position: 0px center;
+  height: fit-content;
+}
+.chicago {
+  border-radius: 10px;
+  background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/122/825/original/chicago.jpeg?1712862965);
+  background-size: cover;
+  background-position: 145px center;
+  height: fit-content;
+}
+.time {
+  font-size: 36px;
+  font-weight: bold;
+}
+.time small {
+  font-size: 14px;
+  vertical-align: middle;
 }
