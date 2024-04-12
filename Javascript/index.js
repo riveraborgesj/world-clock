@@ -3,11 +3,11 @@ function updateTime() {
   let newyorkDateElement = document.querySelector("#new-york .date");
   let newyorkTimeElement = document.querySelector("#new-york .time");
   newyorkDateElement.innerHTML = moment()
-    .tz("America / New_York")
+    .tz("America/New_York")
     .format("MMMM Do YYYY");
   newyorkTimeElement.innerHTML = `${moment()
     .tz("America / New_York")
-    .format("h:m:ss")} <small>${moment().format("A")}</small>`;
+    .format("h:mm:ss")} <small>${moment().format("A")}</small>`;
 
   //Houston
   let houstonDateElement = document.querySelector("#houston .date");
@@ -17,7 +17,7 @@ function updateTime() {
     .format("MMMM Do YYYY");
   houstonTimeElement.innerHTML = `${moment()
     .tz("US/Central")
-    .format("h:m:ss")} <small>${moment().format("A")}</small>`;
+    .format("h:mm:ss")} <small>${moment().format("A")}</small>`;
 
   //Chicago
   let chicagoDateElement = document.querySelector("#chicago .date");
@@ -27,22 +27,24 @@ function updateTime() {
     .format("MMMM Do YYYY");
   chicagoTimeElement.innerHTML = `${moment()
     .tz("America/Chicago")
-    .format("h:m:ss")} <small>${moment().format("A")}</small>`;
+    .format("h:mm:ss")} <small>${moment().format("A")}</small>`;
 }
-
+debugger;
 function updateCity(event) {
-  let cityTimeZone = event.target.value.replace("_", " ").split("/")[1];
+  let cityTimeZone = event.target.value;
+  let cityName = cityTimeZone.replace("_", " ").split("/")[1];
   let cityTime = moment().tz(cityTimeZone);
   let citiesElement = document.querySelector("#cities-container");
+
   citiesElement.innerHTML = ` 
            <div class="new-york">
           <div class="city" id="new-york">
             <div>
-              <h2>${cityTimeZone}</h2>
+              <h2>${cityName}</h2>
               <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
             </div>
             <div class="time">${cityTime.format(
-              "h:m:ss"
+              "h:mm:ss"
             )}<small>${cityTime.format("A")}</small></div>
           </div>
         </div>`;
