@@ -9,43 +9,45 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.45/moment-timezone-with-data-1970-2030.min.js"></script>
   </head>
   <body>
-    <div class="container">
+    <div class="app-container">
       <h1>World Clock</h1>
 
-      <select name="" id="cities">
+      <select name="" id="city-selector">
         <option value="">Select a city..</option>
-        <option value="">🗽 New York</option>
-        <option value="">🏇 Houston</option>
-        <option value="">🌃 Chicago</option>
+        <option value="America/New_York">🗽 New York</option>
+        <option value="US/Central">🏇 Houston</option>
+        <option value="America/Chicago">🌃 Chicago</option>
       </select>
 
-      <div class="new-york">
-        <div class="city" id="new-york">
-          <div>
-            <h2>New York</h2>
-            <div class="date">August 5th, 2022</div>
+      <div id="cities-container">
+        <div class="new-york">
+          <div class="city" id="new-york">
+            <div>
+              <h2>New York</h2>
+              <div class="date">August 5th, 2022</div>
+            </div>
+            <div class="time">5:50 <small>PM</small></div>
           </div>
-          <div class="time">5:50 <small>PM</small></div>
         </div>
-      </div>
 
-      <div class="houston">
-        <div class="city" id="houston">
-          <div>
-            <h2>Houston</h2>
-            <div class="date">August 5th, 2022</div>
+        <div class="houston">
+          <div class="city" id="houston">
+            <div>
+              <h2>Houston</h2>
+              <div class="date">August 5th, 2022</div>
+            </div>
+            <div class="time">5:50 <small>PM</small></div>
           </div>
-          <div class="time">5:50 <small>PM</small></div>
         </div>
-      </div>
 
-      <div class="chicago">
-        <div class="city" id="chicago">
-          <div>
-            <h2>Chicago</h2>
-            <div class="date">August 5th, 2022</div>
+        <div class="chicago">
+          <div class="city" id="chicago">
+            <div>
+              <h2>Chicago</h2>
+              <div class="date">August 5th, 2022</div>
+            </div>
+            <div class="time">5:50 <small>PM</small></div>
           </div>
-          <div class="time">5:50 <small>PM</small></div>
         </div>
       </div>
     </div>
