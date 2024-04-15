@@ -29,7 +29,7 @@ function updateTime() {
     .tz("America/Chicago")
     .format("h:mm:ss")} <small>${moment().format("A")}</small>`;
 }
-debugger;
+
 function updateCity(event) {
   let cityTimeZone = event.target.value;
   let cityName = cityTimeZone.replace("_", " ").split("/")[1];
@@ -37,17 +37,17 @@ function updateCity(event) {
   let citiesElement = document.querySelector("#cities-container");
 
   citiesElement.innerHTML = ` 
-           <div class="new-york">
-          <div class="city" id="new-york">
-            <div>
-              <h2>${cityName}</h2>
-              <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
+             <div class="new-york">
+            <div class="city" id="${cityName.toLowerCase()}">
+              <div>
+                <h2>${cityName}</h2>
+                <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
+              </div>
+              <div class="time">${cityTime.format(
+                "h:mm:ss"
+              )}<small>${cityTime.format("A")}</small></div>
             </div>
-            <div class="time">${cityTime.format(
-              "h:mm:ss"
-            )}<small>${cityTime.format("A")}</small></div>
-          </div>
-        </div>`;
+          </div>`;
 }
 
 updateTime();
