@@ -33,12 +33,19 @@ function updateTime() {
 function updateCity(event) {
   let cityTimeZone = event.target.value;
   let cityName = cityTimeZone.replace("_", " ").split("/")[1];
+  if (cityTimeZone === "current") {
+    cityTimeZone = moment.tz.guess();
+    cityName.replace("current", cityTimeZone);
+  }
   let cityTime = moment().tz(cityTimeZone);
   let citiesElement = document.querySelector("#cities-container");
 
+  if (cityTimeZone === "US/Central") {
+    cityName = "Houston";
+  }
   citiesElement.innerHTML = ` 
              <div class="new-york">
-            <div class="city" id="${cityName.toLowerCase()}">
+            <div class="city" id="${cityName}">
               <div>
                 <h2>${cityName}</h2>
                 <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
@@ -48,6 +55,9 @@ function updateCity(event) {
               )}<small>${cityTime.format("A")}</small></div>
             </div>
           </div>`;
+  setTimeout(() => {
+    updateCity(event);
+  }, 1000);
 }
 
 updateTime();
