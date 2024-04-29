@@ -54,7 +54,7 @@ function updateCity(event) {
                 "h:mm:ss"
               )}<small>${cityTime.format("A")}</small></div>
             </div>
-          </div>`;
+          </div> <a href="index.html">All Cities</a>`;
   setTimeout(() => {
     updateCity(event);
   }, 1000);
