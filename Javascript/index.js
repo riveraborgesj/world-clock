@@ -33,13 +33,13 @@ function updateTime() {
 function updateCity(event) {
   let cityTimeZone = event.target.value;
   let cityName = cityTimeZone.replace("_", " ").split("/")[1];
-  if (cityTimeZone === "current") {
-    cityTimeZone = moment.tz.guess();
-    cityName.replace("current", cityTimeZone);
-  }
   let cityTime = moment().tz(cityTimeZone);
   let citiesElement = document.querySelector("#cities-container");
 
+  if (cityTimeZone === "current") {
+    cityTimeZone = moment.tz.guess();
+    cityName = cityTimeZone.replace("_", " ").split("/")[1];
+  }
   if (cityTimeZone === "US/Central") {
     cityName = "Houston";
   }
@@ -59,9 +59,7 @@ function updateCity(event) {
     updateCity(event);
   }, 1000);
 }
-
 updateTime();
 setInterval(updateTime, 1000);
-
 let citySelectElement = document.querySelector("#city-selector");
 citySelectElement.addEventListener("change", updateCity);
